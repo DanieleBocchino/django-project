@@ -1,19 +1,21 @@
 # REST API using Django REST Framework
 
-
-[![Python](https://img.shields.io/badge/Python-3.8-blue)](https://www.python.org/downloads/release/python-380/)
-[![Django](https://img.shields.io/badge/Django-3.1.7-blue)](https://www.djangoproject.com/download/)
-[![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.12.2-blue)](https://www.django-rest-framework.org/)
-[![React](https://img.shields.io/badge/React-17.0.1-blue)](https://reactjs.org/)
-
-
+[![Python](https://img.shields.io/badge/Python-3.9.13.-yellow)](https://www.python.org/downloads/release/python-380/)
+[![Django](https://img.shields.io/badge/Django-4.2.0-green)](https://www.djangoproject.com/download/)
+[![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.14.0-red)](https://www.django-rest-framework.org/)
+[![React](https://img.shields.io/badge/React-18.0.2-blue)](https://reactjs.org/)
 
 This is a project where a REST API server is developed using Django framework and a simple GUI using React JS.
+
+<p align="middle">
+    <img width='30%' margin='1rem' src='frontend/public/logo512.png'>
+    <img width='35%' margin='1rem' src='frontend/public/django.png'>
+</p>
 
 ## Table of Contents
 
 - [Project Overview](#projectoverview)
-- [Features](#features)    
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -34,6 +36,8 @@ The Django Project includes the following features:
 - Create, Read, Update, and Delete (CRUD) operations on data
 
 ## Installation
+
+### Backend
 
 To install the Django Project, follow these steps:
 
@@ -82,8 +86,32 @@ python manage.py runserver
 
 8. Open a web browser and navigate to http://localhost:8000/ to view the GUI.
 
+### Frontend
+
+To install the React Project, follow these steps:
+
+1. Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+2. Install the required packages using the package.json file:
+
+```bash
+npm install
+```
+
+3. Run the React server:
+
+```bash
+npm start
+```
+
+4. Open a web browser and navigate to http://localhost:3000/ to view the GUI.
 
 ## Usage
+
 Once the server is running, you can interact with the API server through the GUI. The GUI provides a user-friendly interface to view, create, update, and delete data. You can also use tools such as curl or Postman to interact with the API server directly.
 
 ## Contributors
@@ -93,11 +121,11 @@ Once the server is running, you can interact with the API server through the GUI
 [![GitHub Followers](https://img.shields.io/github/followers/DanieleBocchino?style=social)](https://github.com/DanieleBocchino)  
 [![LinkedIn Connect](https://img.shields.io/badge/LinkedIn-Connect-blue?style=social&logo=linkedin)](https://www.linkedin.com/in/daniele-bocchino-aa602a20b/)
 
-
 ## License
+
 The Django Project is licensed under the MIT License.
 
-[![GitHub License](https://img.shields.io/github/license/DanieleBocchino/django-project)]( )
+[![GitHub License](https://img.shields.io/github/license/DanieleBocchino/django-project)]()
 
 [![GitHub Issues](https://img.shields.io/github/issues/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
 [![GitHub Stars](https://img.shields.io/github/stars/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
