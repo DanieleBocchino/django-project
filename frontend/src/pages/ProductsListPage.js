@@ -1,38 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ListProductItem from "../components/ListProductItem";
-import { Container, Grid } from "@mui/material";
+import { Box,  Grid } from "@mui/material";
 
-function ProductsListPage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  let getProducts = async () => {
-    let response = await fetch("/api/products");
-    let data = await response.json();
-    console.log(data);
-    setProducts(data);
-  };
+function ProductsListPage({ products, setLoading }) {
 
   return (
-    <Container style={{ marigin: 2 }}>
-      ProductsListPage
-      <div className="products-list">
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
-          {products.map((product, index) => (
-            <Grid style={{ margin: '1vh' }} xs={2} sm={4} md={4} key={index}>
-              <ListProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-    </Container>
+    <Box sx={{ margin: 5 }}>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 2, sm: 4, md: 8, lg: 12 }}
+      >
+        {products?.map((product, index) => (
+          <Grid xs={2} sm={4} md={4} key={index}>
+            <Box sx={{ padding: { xs: 1, sm: 3, md:5 } }}>
+              <ListProductItem product={product} setLoading={setLoading} />
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 }
 

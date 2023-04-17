@@ -1,20 +1,48 @@
 import "./App.css";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import ProductsListPage from "./pages/ProductsListPage";
-import ProductPage from "./pages/ProductPage";
-
-
+import React, { useEffect, useState } from "react";
+import { Container } from "@mui/material";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getProducts();
+    setLoading(false);
+  }, [loading]);
+
+  let getProducts = async () => {
+    let response = await fetch("/api/products");
+    let data = await response.json();
+    setProducts(data);
+    setFilteredProducts(data);
+  };
+
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" exact element={<ProductsListPage/>} />
-        <Route path="/product/:id" exact element={<ProductPage/>} />
-
-      </Routes>
+      <Header
+        products={products}
+        setFilteredProducts={setFilteredProducts}
+        setLoading={setLoading}
+      />
+      <Container maxWidth="xl">
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <ProductsListPage
+                products={filteredProducts}
+                setLoading={setLoading}
+              />
+            }
+          />
+        </Routes>
+      </Container>
     </div>
   );
 }
