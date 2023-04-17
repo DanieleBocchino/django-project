@@ -8,7 +8,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import SetProduct from "./SetProduct";
@@ -17,7 +17,7 @@ function ListProductItem({ product, setLoading }) {
   const [open, setOpen] = useState(false);
 
   const deleteProduct = async () => {
-    setLoading(true)
+    setLoading(true);
     fetch(`/api/products/${product.id}/delete`, {
       method: "DELETE",
     }).then((response) => {
@@ -48,7 +48,13 @@ function ListProductItem({ product, setLoading }) {
         />
         {/* </Link> */}
 
-        <CardContent style={{ height: 200 }}>
+        <CardContent
+          style={{
+            maxHeight: 200,
+            height: 200,
+            overflow: "hidden",           
+          }}
+        >
           {product?.description}
         </CardContent>
         <CardActions style={{ justifyContent: "space-between" }}>

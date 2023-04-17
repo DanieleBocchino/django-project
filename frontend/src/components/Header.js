@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
 import { AppBar, Box, Toolbar, Typography, InputBase } from "@mui/material";
-import { styled, alpha } from "@mui/material/styles";
+import { styled, alpha, useTheme } from "@mui/material/styles";
 import SetProduct from "./SetProduct";
 
 //Style
@@ -16,14 +16,14 @@ const Search = styled("div")(({ theme }) => ({
   },
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("xs")]: {
     marginLeft: theme.spacing(1),
     width: "auto",
   },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(0, 1),
   height: "100%",
   position: "absolute",
   pointerEvents: "none",
@@ -41,9 +41,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "8ch",
       "&:focus": {
         width: "20ch",
+      },
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "8ch",
+      "&:focus": {
+        width: "12ch",
       },
     },
   },
@@ -72,15 +78,14 @@ function Header({ products, setFilteredProducts, setLoading }) {
     <Box sx={{ flexGrow: 1 }}>
       <SetProduct open={open} setOpen={setOpen} setLoading={setLoading} />
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{justifyContent :'space-between'}}>
           <Button
             variant="outlined"
             color="success"
             startIcon={<AddIcon />}
             onClick={() => handleOpen()}
-          >
-            Add Product
-          </Button>
+            children={"Add Product"}
+          />
 
           <Typography
             variant="h4"

@@ -6,17 +6,31 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   Stack,
+  Slide,
 } from "@mui/material";
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="right" ref={ref} {...props} />;
+});
+
 function SetProduct({ open, setOpen, setLoading, product = {}, edit = false }) {
+  let settings = [
+    { name: "title", label: "Title", type: "text" },
+    { name: "img", label: "Image", type: "text" },
+    {
+      name: "description",
+      label: "Description",
+      type: "text",
+      multiline: true,
+    },
+    { name: "price", label: "Price ", type: "number" },
+  ];
+
   const [data, setData] = useState(product);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
     if (edit) {
@@ -50,34 +64,27 @@ function SetProduct({ open, setOpen, setLoading, product = {}, edit = false }) {
     handleClose();
   };
 
-  let settings = [
-    { name: "title", label: "Title", type: "text" },
-    { name: "img", label: "Image", type: "text" },
-    {
-      name: "description",
-      label: "Description",
-      type: "text",
-      multiline: true,
-    },
-    { name: "price", label: "Price ", type: "number" },
-  ];
-
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>New Recipe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText>
+      <Dialog
+        TransitionComponent={Transition}
+        fullWidth={true}
+        open={open}
+        onClose={handleClose}
+        maxWidth={"sm"}
+      >
+        <DialogTitle>New Product</DialogTitle>
 
+        <DialogContent>
           {settings.map((setting) => (
             <Stack>
               <TextField
                 id="outlined-controlled"
                 label={setting["label"]}
-                sx={{ margin: 1 }}
+                color="warning"
+                sx={{
+                  margin: 1,
+                }}
                 value={data[setting["name"]]}
                 type={setting["type"]}
                 multiline={setting["multiline"]}
@@ -89,7 +96,7 @@ function SetProduct({ open, setOpen, setLoading, product = {}, edit = false }) {
           ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleSubmit}>Add</Button>
+          <Button color="warning" onClick={handleSubmit} children={"Add"} />
         </DialogActions>
       </Dialog>
     </div>
