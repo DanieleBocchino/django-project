@@ -125,10 +125,3 @@ Once the server is running, you can interact with the API server through the GUI
 
 The Django Project is licensed under the MIT License.
 
-[![GitHub License](https://img.shields.io/github/license/DanieleBocchino/django-project)]()
-
-[![GitHub Issues](https://img.shields.io/github/issues/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
-[![GitHub Stars](https://img.shields.io/github/stars/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
-[![GitHub Forks](https://img.shields.io/github/forks/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
-[![GitHub Contributors](https://img.shields.io/github/contributors/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
