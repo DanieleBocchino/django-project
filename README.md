@@ -18,7 +18,7 @@ This is a project where a REST API server is developed using Django framework an
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Project Overview
@@ -125,8 +125,7 @@ Once the server is running, you can interact with the API server through the GUI
 
 The Django Project is licensed under the MIT License.
 
-
-[![GitHub License](https://img.shields.io/github/license/DanieleBocchino/django-project)]()
+[![GitHub License](https://img.shields.io/github/license/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project/)
 
 [![GitHub Issues](https://img.shields.io/github/issues/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
 [![GitHub Stars](https://img.shields.io/github/stars/DanieleBocchino/django-project)](https://github.com/DanieleBocchino/django-project)
