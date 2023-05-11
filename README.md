@@ -2,15 +2,20 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9.13.-yellow)](https://www.python.org/downloads/release/python-380/)
 [![Django](https://img.shields.io/badge/Django-4.2.0-green)](https://www.djangoproject.com/download/)
-[![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.14.0-red)](https://www.django-rest-framework.org/)
+[![Django REST](https://img.shields.io/badge/Django%20REST-3.14.0-red)](https://www.django-rest-framework.org/)
 [![React](https://img.shields.io/badge/React-18.0.2-blue)](https://reactjs.org/)
-[![Docker]() ]
+[![Docker](https://img.shields.io/badge/Docker-20.10.8-blue)](https://www.docker.com/)
+[![NGINX](https://img.shields.io/badge/NGINX-1.21.3-green)](https://www.nginx.com/)
 
-This is a project where a REST API server is developed using Django framework and a simple GUI using React JS.
+This is a project where a REST API server is developed using Django framework and a simple GUI using React JS and docker.
 
 <p align="middle">
     <img width='30%' margin='1rem' src='frontend/public/logo512.png'>
     <img width='35%' margin='1rem' src='frontend/public/django.png'>
+</p>
+<p align="middle">
+    <img width='35%' margin='1rem' src='frontend/public/nginx.png'>
+    <img width='30%' margin='1rem' src='frontend/public/docker.png'>
 </p>
 
 ## Table of Contents
@@ -110,6 +115,22 @@ npm start
 ```
 
 4. Open a web browser and navigate to http://localhost:3000/ to view the GUI.
+
+### Docker
+
+To install the Django Project using Docker, follow these steps:
+
+1. docker-compose build
+```bash
+docker-compose build
+```
+2. docker-compose up
+
+```bash
+docker-compose up
+```
+
+3. Open a web browser and navigate to http://localhost/ to view the GUI.
 
 ## Usage
 
