@@ -4,6 +4,7 @@
 [![Django](https://img.shields.io/badge/Django-4.2.0-green)](https://www.djangoproject.com/download/)
 [![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.14.0-red)](https://www.django-rest-framework.org/)
 [![React](https://img.shields.io/badge/React-18.0.2-blue)](https://reactjs.org/)
+[![Docker]() ]
 
 This is a project where a REST API server is developed using Django framework and a simple GUI using React JS.
 
